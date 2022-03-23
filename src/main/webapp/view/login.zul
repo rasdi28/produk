@@ -1,0 +1,42 @@
+<?page title="Home Page" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Home Page" border="normal" viewModel=" @id('vm') @init('com.sdd.project1.viewmodel.Loginvm')">
+
+		<groupbox mold="3d">
+		<caption label="Welcome To Login Page"></caption>
+			<grid>
+				<columns>
+					<column width="250px" />
+					<column></column>
+				</columns>
+				<rows>
+					<row>
+						<label value="user Id" />
+						<textbox value="@bind(vm.userId)" />	
+					</row>
+					<row >
+						<label value="Password" />
+						<textbox type="password" value="@bind(vm.password)" />
+					</row>
+					
+
+				</rows>
+				
+				<foot>
+					<footer />
+					<footer>
+						<button label="Login" onClick="@command('doLogin')" />
+						<button label="Clear Message" id="btnClear" onClick="@command('doClearMsg')" />
+					</footer>
+				</foot>
+
+			</grid>
+
+		</groupbox>
+		
+		<separator />
+		<groupbox id="gbMsg" mold="3d" title="Messages"></groupbox>
+
+
+	</window>
+</zk>

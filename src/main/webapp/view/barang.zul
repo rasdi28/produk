@@ -1,0 +1,83 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="new page title" border="normal"
+		viewModel=" @id('vm') @init('com.sdd.project1.viewmodel.BarangVm')">
+		<groupbox>
+
+			<grid>
+				<columns>
+					<column />
+					<column />
+					<column />
+					<column />
+				</columns>
+				<rows>
+					<row>
+						<label value="Nama Barang" />
+						<combobox model="@load(vm.barangModel)"
+							selectedItem="@bind(vm.mbarang)">
+							<template name="model" var="mbarang">
+								<comboitem
+									label="@load(mbarang.namabarang)">
+								</comboitem>
+							</template>
+						</combobox>
+						<label value="harga" />
+						<decimalbox value="@load(vm.mbarang.price)"
+							format="####,##0" />
+					</row>
+					<row>
+						<label value="Qty" />
+						<intbox value="@bind(vm.qty)"
+							onChange="@command('doCal', price = vm.mbarang.price, qty = vm.qty)" />
+						<label value="Total Harga" />
+						<decimalbox value="@bind(vm.total)"
+							format="###,##0" style="text-align:right" disabled="true" />
+					</row>
+					<row>
+						<label value="Jenis Barang" />
+						<textbox value="@bind(vm.mbarang.jenis)"
+							disabled="true" />
+					</row>
+				</rows>
+				<foot>
+					<footer></footer>
+					<footer>
+						<button label="Submit"
+							onClick="@command('doCreate')" />
+					</footer>
+				</foot>
+			</grid>
+		</groupbox>
+		<separator />
+		<separator />
+		<groupbox>
+
+			<div style="float: left;">
+				<hbox align="center">
+					<textbox id="keywordBox" />
+					<button id="searchButton" label="Search"
+						image="/img/search.png" />
+				</hbox>
+			</div>
+		</groupbox>
+
+		<grid id="grid" mold="paging" pageSize="5"
+			pagingPosition="bottom">
+			<columns>
+				<column label="No" width="40px" />
+				<column label="Nama Barang" />
+				<column label="Jenis " />
+				<column label="Harga" />
+				<column label="qty" />
+				<column label="total " />
+
+			</columns>
+		</grid>
+		<groupbox>
+
+
+		</groupbox>
+
+	</window>
+</zk>

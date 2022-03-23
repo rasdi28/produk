@@ -1,0 +1,21 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Form Transaksi Pembelian" border="normal"
+		viewModel=" @id('vm') @init('com.sdd.project1.viewmodel.ProductVm')">
+
+		<separator />
+
+		<grid id="grid" mold="paging" pageSize="5"
+			pagingPosition="bottom">
+			<columns>
+				<column label="No" width="50px" />
+				<column label="Product Name" />
+				<column label="Product Price" align="right" />
+				<column label="Qty" align="right" />
+			</columns>
+
+
+		</grid>
+
+	</window>
+</zk>

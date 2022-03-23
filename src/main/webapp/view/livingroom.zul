@@ -1,0 +1,28 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="new page title" border="normal" viewModel=" @id('vm') @init('com.sdd.project1.viewmodel.LivingroomVm')">
+	
+	<label value="My House" style="font-size:22px" />
+	
+	<separator />
+	
+	<hlayout>
+		<a label="User Group" onClick="@command('doNav', halaman='usergroup.zul')" />
+		<a label="User Test" onClick="@command('doNav', halaman='user.zul')" />
+		<a label="Items" onClick="@command('doNav',halaman='items.zul') " />
+		<a label="About" onClick="@command('doNav', halaman='about.zul')" />
+		<a label = "transaksi" onClick="@command('doNav',halaman='transaksi.zul')" />
+		<a label="Barang" onClick="@command('doNav', halaman='barang.zul')" />
+		<a label="Search" onClick="@command('doNav',halaman='search.zul')" />
+		<a label="barang" onClick="@command('doNav',halaman='transaksi.zul')" />
+		
+		
+	</hlayout>
+	
+	<separator />
+	
+	<div id="divContent" /> 
+	
+
+</window>
+</zk>

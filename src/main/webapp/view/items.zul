@@ -1,0 +1,78 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="new page title" border="normal"
+		viewModel=" @id('vm') @init('com.sdd.project1.viewmodel.ItemVm')">
+
+		<groupbox>
+			<grid>
+				<columns>
+					<column width="250px" />
+					<column />
+				</columns>
+				<rows>
+					<row>
+						<label value="Nama Item" />
+						<textbox value="@bind(vm.obj.itemnama)" />
+					</row>
+					<row>
+						Jumlah Item
+						<spinner value="@bind(vm.obj.itemstock)"
+							width="210px" />
+					</row>
+					<row>
+						Jenis
+						<combobox value="@bind(vm.obj.itemjenis)"
+							width="210px">
+							<comboitem label="Elektronik" />
+							<comboitem label="Food" />
+							<comboitem label="Drink" />
+						</combobox>
+					</row>
+					<row>
+						Item
+						<combobox id="combobox">
+							<comboitem label="@bind(vm.objnew.nama)">
+							
+							</comboitem>
+						</combobox>
+					</row>
+				</rows>
+
+				<foot>
+					<footer>
+						<button label="Submit"
+							onClick="@command('doSubmit')" />
+					</footer>
+				</foot>
+			</grid>
+		</groupbox>
+		<separator />
+
+		<grid id="grid" mold="paging" pageSize="5"
+			pagingPosition="bottom">
+			<columns>
+				<column label="No" width="50px" />
+				<column label="Item Name" width="120px" />
+				<column label="Item Qty" />
+				<column label="Items Category" />
+				<column label="date" />
+				<column label="Action" align="center" />
+			</columns>
+			<foot>
+				<footer />
+				<footer>
+					<label value="TOTAL ITEM" />
+				</footer>
+				<footer>
+					<label value="@bind(vm.jmlh)" />
+				</footer>
+				<footer>
+					<label value="Total Stock :"></label>
+				</footer>
+				<footer>
+					<label value="@bind(vm.jmlhstok)"></label>
+				</footer>
+			</foot>
+		</grid>
+	</window>
+</zk>

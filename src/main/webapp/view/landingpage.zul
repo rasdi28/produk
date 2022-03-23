@@ -1,0 +1,16 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="new page title" border="normal">
+	<groupbox mold="3d">
+		<hlayout>
+			<button label="Home" />
+			<button label="Page" />
+			<button label="login" onClick="@command('doLogin')" viewModel=" @id('vm') @init('com.sdd.project1.viewmodel.LandingVm')" />
+		
+		</hlayout>
+	
+	</groupbox>
+
+
+</window>
+</zk>

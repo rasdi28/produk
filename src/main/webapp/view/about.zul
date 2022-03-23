@@ -1,0 +1,28 @@
+<?page title="About" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="About" border="normal"
+		viewModel=" @id('vm') @init('com.sdd.project1.viewmodel.AboutVm')">
+
+	
+		<label value="@bind(vm.objabout.name)"></label>
+		<label value="@bind(vm.objabout.harga)"></label>
+
+		<groupbox>
+			<grid>
+				<columns>
+					<column />
+					<column />
+				</columns>
+				<rows>
+						<row>
+							<combobox id="combobox">
+								<comboitem
+									label="@bind(vm.objabout.name)">
+								</comboitem>
+							</combobox>
+						</row>
+				</rows>
+			</grid>
+		</groupbox>
+	</window>
+</zk>

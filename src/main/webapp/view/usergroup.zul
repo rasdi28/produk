@@ -1,0 +1,48 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="new page title" border="normal"
+		viewModel=" @id('vm') @init('com.sdd.project1.viewmodel.UsergroupVm')">
+		<groupbox mold="3d">
+			<caption label="Form User Group" />
+			<grid>
+				<columns>
+				<column width="250px" />
+				<column />
+				</columns>
+				<rows>
+					<row>
+					<label value="Label User Group" />
+					<textbox value="@bind(vm.obj.usergroupcode)" />
+					</row>
+					<row>
+						<label value="User Group Name" />
+						<textbox value="@bind(vm.obj.usergroupname)" />
+					</row>
+				</rows>
+				<foot>
+					<footer>
+						<button label="Submit" onClick="@command('doSubmit')" />
+					</footer>
+				
+				</foot>
+			</grid>
+		</groupbox>
+		
+		<separator />
+		
+		<grid id="grid" mold="paging" pageSize="5" pagingPosition="top">
+		
+		<columns>
+			<column label="No" align="right" width="50px" />
+			<column label="User Group Code" width="150" />
+			<column label="User Group Name" />
+			<column label="Created date" align="center" />
+			<column label="Action" align="center" width="200px" />
+		
+		</columns>
+		
+		</grid>
+
+
+	</window>
+</zk>
